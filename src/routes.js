@@ -14,12 +14,15 @@ import CompraevendaController from './app/controllers/CompraevendaController';
 import ImagenscvController from './app/controllers/ImagenscvController';
 
 import authMiddleware from './app/middlewares/auth';
+import BannerController from './app/controllers/BannerController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/usuarios', UsuarioController.store);
 routes.post('/sessions', SessionController.store);
+
+routes.get('/banner', BannerController.index);
 
 routes.get('/blog', BlogController.index);
 routes.get('/blog/:id', BlogController.detail);
@@ -48,6 +51,8 @@ routes.get('/contato', ContatoformsController.index);
 routes.get('/usuarios', UsuarioController.index);
 routes.put('/usuarios', UsuarioController.update);
 routes.delete('/usuarios/:id', UsuarioController.delete);
+
+routes.post('/banner', BannerController.store);
 
 routes.post('/blog', BlogController.store);
 routes.put('/blog/:id', BlogController.update);
