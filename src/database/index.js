@@ -2,6 +2,7 @@ import Sequelize from 'sequelize';
 
 import Usuario from '../app/models/Usuario';
 import File from '../app/models/File';
+import Banner from '../app/models/Banner';
 import Blog from '../app/models/Blog';
 import Produto from '../app/models/Produto';
 import Contatoforms from '../app/models/Contatoforms';
@@ -16,6 +17,7 @@ const models = [
   Usuario,
   File,
   Blog,
+  Banner,
   Produto,
   Contatoforms,
   Ondeestamos,
