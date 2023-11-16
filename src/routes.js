@@ -53,6 +53,7 @@ routes.put('/usuarios', UsuarioController.update);
 routes.delete('/usuarios/:id', UsuarioController.delete);
 
 routes.post('/banner', BannerController.store);
+routes.delete('/banner/:id', BannerController.delete);
 
 routes.post('/blog', BlogController.store);
 routes.put('/blog/:id', BlogController.update);
