@@ -28,6 +28,7 @@ class BannerController {
         'titulo',
       ],
       limit: 20,
+      order: [['id', 'DESC']],
       include: [
         {
           model: File,
