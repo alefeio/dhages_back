@@ -22,7 +22,7 @@ const upload = multer(multerConfig);
 routes.post('/usuarios', UsuarioController.store);
 routes.post('/sessions', SessionController.store);
 
-routes.get('/banner', BannerController.index);
+routes.get('/banners', BannerController.index);
 
 routes.get('/blog', BlogController.index);
 routes.get('/blog/:id', BlogController.detail);
