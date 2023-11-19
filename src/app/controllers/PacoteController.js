@@ -1,5 +1,5 @@
 import * as Yup from 'yup';
-import Pacotes from '../models/Pacotes';
+import Pacotes from '../models/Pacote';
 import File from '../models/File';
 
 class PacotesController {
