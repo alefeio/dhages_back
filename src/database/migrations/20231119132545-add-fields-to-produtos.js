@@ -23,12 +23,12 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: true,
       }),
-      queryInterface.dropColumn('marca', 'produtos'),
-      queryInterface.dropColumn('embalagem', 'produtos'),
-      queryInterface.dropColumn('peso', 'produtos'),
-      queryInterface.dropColumn('informacaoalergica', 'produtos'),
-      queryInterface.dropColumn('garantia', 'produtos'),
-      queryInterface.dropColumn('paisorigem', 'produtos'),
+      queryInterface.removeColumn('marca', 'produtos'),
+      queryInterface.removeColumn('embalagem', 'produtos'),
+      queryInterface.removeColumn('peso', 'produtos'),
+      queryInterface.removeColumn('informacaoalergica', 'produtos'),
+      queryInterface.removeColumn('garantia', 'produtos'),
+      queryInterface.removeColumn('paisorigem', 'produtos'),
     ];
   },
 
