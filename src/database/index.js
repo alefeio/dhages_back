@@ -12,6 +12,7 @@ import Detalhescv from '../app/models/Detalhecv';
 import Imagenscv from '../app/models/Imagenscv';
 
 import databaseConfig from '../config/database';
+import Pacotes from '../app/models/Pacote';
 
 const models = [
   Usuario,
@@ -24,6 +25,7 @@ const models = [
   Compraevenda,
   Detalhescv,
   Imagenscv,
+  Pacotes
 ];
 
 class Database {

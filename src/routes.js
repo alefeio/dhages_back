@@ -15,6 +15,7 @@ import ImagenscvController from './app/controllers/ImagenscvController';
 
 import authMiddleware from './app/middlewares/auth';
 import BannerController from './app/controllers/BannerController';
+import PacoteController from './app/controllers/PacoteController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -29,6 +30,9 @@ routes.get('/blog/:id', BlogController.detail);
 
 routes.get('/produtos', ProdutoController.index);
 routes.get('/produtos/:id', ProdutoController.detail);
+
+routes.get('/pacotes', PacoteController.index);
+routes.get('/pacotes/:id', PacoteController.detail);
 
 routes.get('/compraevenda/', CompraevendaController.index);
 routes.get('/compraevenda/:id', CompraevendaController.detail);
@@ -62,6 +66,10 @@ routes.delete('/blog/:id', BlogController.delete);
 routes.post('/produtos', ProdutoController.store);
 routes.put('/produtos/:id', ProdutoController.update);
 routes.delete('/produtos/:id', ProdutoController.delete);
+
+routes.post('/pacotes', PacoteController.store);
+routes.put('/pacotes/:id', PacoteController.update);
+routes.delete('/pacotes/:id', PacoteController.delete);
 
 routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);
