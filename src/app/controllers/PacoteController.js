@@ -55,6 +55,10 @@ class PacotesController {
   async index(req, res) {
     const { page = 1 } = req.query;
 
+    const total = await Pacotes.count({
+      where: { ativo: true },
+    });
+
     const pacotes = await Pacotes.findAll({
       where: { ativo: true },
       order: ['saida'],
@@ -68,6 +72,8 @@ class PacotesController {
         },
       ],
     });
+
+    pacotes.total = total;
 
     return res.json(pacotes);
   }
