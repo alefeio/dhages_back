@@ -73,9 +73,7 @@ class PacotesController {
       ],
     });
 
-    pacotes.total = total;
-
-    return res.json(pacotes);
+    return res.json({ pacotes, total });
   }
 
   async detail(req, res) {
