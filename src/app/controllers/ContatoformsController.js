@@ -60,6 +60,7 @@ class ContatoformsController {
     // }
 
     const contatos = await Contatoforms.findAll({
+      order: [['created_at', 'DESC']],
       attributes: [
         'nome',
         'email',
