@@ -8,7 +8,7 @@ class BuscaController {
     const { page = 1, busca } = req.query;
 
     const total = await Pacotes.count({
-      where: { ativo: true },
+      where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` } },
     });
 
     const produtos = await Pacotes.findAll({
