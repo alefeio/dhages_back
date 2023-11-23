@@ -1,12 +1,13 @@
 import Produto from '../models/Produto';
 import File from '../models/File';
 import { Op } from 'sequelize';
+import Pacotes from '../models/Pacote';
 
 class BuscaController {
   async index(req, res) {
     const { page = 1, busca } = req.query;
 
-    const produtos = await Produto.findAll({
+    const produtos = await Pacotes.findAll({
       where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` } },
       order: ['created_at'],
       limit: 20,
