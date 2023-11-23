@@ -7,11 +7,15 @@ class BuscaController {
   async index(req, res) {
     const { page = 1, busca } = req.query;
 
+    const total = await Pacotes.count({
+      where: { ativo: true },
+    });
+
     const produtos = await Pacotes.findAll({
       where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` } },
       order: ['created_at'],
-      limit: 20,
-      offset: (page - 1) * 20,
+      limit: 12,
+      offset: (page - 1) * 12,
       include: [
         {
           model: File,
@@ -23,7 +27,7 @@ class BuscaController {
 
     console.log(produtos);
 
-    return res.json(produtos);
+    return res.json({ produtos, total });
   }
 }
 
