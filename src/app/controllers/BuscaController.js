@@ -13,7 +13,7 @@ class BuscaController {
 
     const produtos = await Pacotes.findAll({
       where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` } },
-      order: ['created_at'],
+      order: ['saida'],
       limit: 12,
       offset: (page - 1) * 12,
       include: [
