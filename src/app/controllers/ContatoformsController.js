@@ -61,15 +61,7 @@ class ContatoformsController {
 
     const contatos = await Contatoforms.findAll({
       where: { lida: false },
-      order: [['created_at', 'DESC']],
-      attributes: [
-        'nome',
-        'email',
-        'telefone',
-        'assunto',
-        'mensagem',
-        'created_at',
-      ],
+      order: [['created_at', 'DESC']]
     });
 
     return res.json(contatos);
