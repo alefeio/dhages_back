@@ -85,7 +85,7 @@ class ContatoformsController {
       return res.status(400).json({ erro: 'Não encontrado!' });
     }
 
-    contato.ativo = false;
+    contato.lida = true;
 
     contato.save();
 
