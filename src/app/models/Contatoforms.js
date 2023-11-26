@@ -9,6 +9,7 @@ class Contatoforms extends Model {
         telefone: Sequelize.STRING,
         assunto: Sequelize.STRING,
         mensagem: Sequelize.STRING,
+        lida: Sequelize.BOOLEAN,
       },
       {
         sequelize,
