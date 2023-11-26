@@ -73,6 +73,24 @@ class ContatoformsController {
 
     return res.json(contatos);
   }
+
+  async delete(req, res) {
+    if (!req.usuarioAdmin) {
+      return res.status(401).json({ erro: 'Operação não autorizada!' });
+    }
+
+    const contato = await Contatoforms.findByPk(req.params.id);
+
+    if (!contato) {
+      return res.status(400).json({ erro: 'Não encontrado!' });
+    }
+
+    contato.ativo = false;
+
+    contato.save();
+
+    return res.json(contato);
+  }
 }
 
 export default new ContatoformsController();
