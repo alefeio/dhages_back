@@ -51,7 +51,7 @@ routes.get('/', (req, res) => res.send('ok'));
 routes.use(authMiddleware);
 
 routes.get('/contato', ContatoformsController.index);
-routes.get('/contato/:id', ContatoformsController.delete);
+routes.delete('/contato/:id', ContatoformsController.delete);
 
 routes.get('/usuarios', UsuarioController.index);
 routes.put('/usuarios', UsuarioController.update);
