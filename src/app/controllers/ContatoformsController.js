@@ -60,6 +60,28 @@ class ContatoformsController {
     // }
 
     const contatos = await Contatoforms.findAll({
+      where: { lida: false },
+      order: [['created_at', 'DESC']],
+      attributes: [
+        'nome',
+        'email',
+        'telefone',
+        'assunto',
+        'mensagem',
+        'created_at',
+      ],
+    });
+
+    return res.json(contatos);
+  }
+
+  async lidas(req, res) {
+    // if (!req.isAdmin) {
+    //   return res.status(401).json({ erro: 'Operação não autorizada!' });
+    // }
+
+    const contatos = await Contatoforms.findAll({
+      where: { lida: true },
       order: [['created_at', 'DESC']],
       attributes: [
         'nome',
