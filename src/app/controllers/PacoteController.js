@@ -1,6 +1,8 @@
 import * as Yup from 'yup';
 import Pacotes from '../models/Pacote';
 import File from '../models/File';
+import { Op } from 'sequelize';
+// const { Op } = require('sequelize')
 
 class PacotesController {
   async store(req, res) {
@@ -62,7 +64,7 @@ class PacotesController {
     });
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true, saida: { gt: hoje } },
+      where: { ativo: true, saida: { [Op.gte]: hoje } },
       order: ['saida'],
       limit: 12,
       offset: (page - 1) * 12,
