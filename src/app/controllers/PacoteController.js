@@ -58,11 +58,11 @@ class PacotesController {
     const hoje = new Date();
 
     const total = await Pacotes.count({
-      where: { ativo: true, saida: { lte: hoje } },
+      where: { ativo: true, saida: { gte: hoje } },
     });
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true, saida: { lte: hoje } },
+      where: { ativo: true, saida: { gte: hoje } },
       order: ['saida'],
       limit: 12,
       offset: (page - 1) * 12,
@@ -84,11 +84,11 @@ class PacotesController {
     const hoje = new Date();
 
     const total = await Pacotes.count({
-      where: { ativo: true, saida: { gt: hoje } },
+      where: { ativo: true, saida: { lt: hoje } },
     });
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true, saida: { gt: hoje } },
+      where: { ativo: true, saida: { lt: hoje } },
       order: ['saida'],
       limit: 50,
       offset: (page - 1) * 50,
