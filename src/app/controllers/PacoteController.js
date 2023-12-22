@@ -56,7 +56,7 @@ class PacotesController {
     const { page = 1 } = req.query;
 
     const total = await Pacotes.count({
-      where: { ativo: true },
+      where: { ativo: true, saida: { lte: hoje } },
     });
 
     const hoje = new Date();
@@ -82,7 +82,7 @@ class PacotesController {
     const { page = 1 } = req.query;
 
     const total = await Pacotes.count({
-      where: { ativo: true },
+      where: { ativo: true, saida: { gt: hoje } },
     });
 
     const hoje = new Date();
