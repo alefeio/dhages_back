@@ -88,7 +88,7 @@ class PacotesController {
     const hoje = new Date();
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true, saida: { rte: hoje } },
+      where: { ativo: true, saida: { gt: hoje } },
       order: ['saida'],
       limit: 50,
       offset: (page - 1) * 50,
