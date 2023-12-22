@@ -55,11 +55,11 @@ class PacotesController {
   async index(req, res) {
     const { page = 1 } = req.query;
 
+    const hoje = new Date();
+
     const total = await Pacotes.count({
       where: { ativo: true, saida: { lte: hoje } },
     });
-
-    const hoje = new Date();
 
     const pacotes = await Pacotes.findAll({
       where: { ativo: true, saida: { lte: hoje } },
@@ -81,11 +81,11 @@ class PacotesController {
   async realizadas(req, res) {
     const { page = 1 } = req.query;
 
+    const hoje = new Date();
+
     const total = await Pacotes.count({
       where: { ativo: true, saida: { gt: hoje } },
     });
-
-    const hoje = new Date();
 
     const pacotes = await Pacotes.findAll({
       where: { ativo: true, saida: { gt: hoje } },
