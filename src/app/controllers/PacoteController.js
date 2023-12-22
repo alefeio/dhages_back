@@ -78,17 +78,17 @@ class PacotesController {
     return res.json({ pacotes, total });
   }
 
-  async realizadas(req, res) {
+  async todas(req, res) {
     const { page = 1 } = req.query;
 
     const hoje = new Date();
 
     const total = await Pacotes.count({
-      where: { ativo: true, saida: { lt: hoje } },
+      where: { ativo: true },
     });
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true, saida: { lt: hoje } },
+      where: { ativo: true },
       order: ['saida'],
       limit: 50,
       offset: (page - 1) * 50,
