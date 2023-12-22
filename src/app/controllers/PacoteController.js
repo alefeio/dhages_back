@@ -78,6 +78,32 @@ class PacotesController {
     return res.json({ pacotes, total });
   }
 
+  async realizadas(req, res) {
+    const { page = 1 } = req.query;
+
+    const total = await Pacotes.count({
+      where: { ativo: true },
+    });
+
+    const hoje = new Date();
+
+    const pacotes = await Pacotes.findAll({
+      where: { ativo: true, saida: { rte: hoje } },
+      order: ['saida'],
+      limit: 50,
+      offset: (page - 1) * 50,
+      include: [
+        {
+          model: File,
+          as: 'imagem',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
+    });
+
+    return res.json({ pacotes, total });
+  }
+
   async detail(req, res) {
     const busca = req.params.id;
 
