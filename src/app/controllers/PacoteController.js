@@ -60,7 +60,7 @@ class PacotesController {
     const hoje = new Date();
 
     const total = await Pacotes.count({
-      where: { ativo: true, saida: { gt: hoje } },
+      where: { ativo: true, saida: { [Op.gte]: hoje } },
     });
 
     const pacotes = await Pacotes.findAll({
