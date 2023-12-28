@@ -32,7 +32,6 @@ routes.get('/produtos', ProdutoController.index);
 routes.get('/produtos/:id', ProdutoController.detail);
 
 routes.get('/pacotes', PacoteController.index);
-routes.get('/todas', PacoteController.todas);
 routes.get('/pacotes/:id', PacoteController.detail);
 
 routes.get('/compraevenda/', CompraevendaController.index);
@@ -73,6 +72,7 @@ routes.delete('/produtos/:id', ProdutoController.delete);
 routes.post('/pacotes', PacoteController.store);
 routes.put('/pacotes/:id', PacoteController.update);
 routes.delete('/pacotes/:id', PacoteController.delete);
+routes.get('/todas', PacoteController.todas);
 
 routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);
