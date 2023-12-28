@@ -41,14 +41,14 @@ routes.get('/detalhesimagenscv/:id', CompraevendaController.detalhesimagenscv);
 
 routes.get('/busca', BuscaController.index);
 
-routes.post('/contato', ContatoformsController.store);
-
 routes.get('/ondeestamos', OndeestamosController.index);
 routes.get('/ondeestamos/:id', OndeestamosController.detail);
 
 routes.get('/', (req, res) => res.send('ok'));
 
 routes.use(authMiddleware);
+
+routes.post('/contato', ContatoformsController.store);
 
 routes.get('/contato', ContatoformsController.index);
 routes.get('/contatolidas', ContatoformsController.lidas);
