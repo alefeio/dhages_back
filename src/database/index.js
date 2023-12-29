@@ -13,12 +13,14 @@ import Imagenscv from '../app/models/Imagenscv';
 
 import databaseConfig from '../config/database';
 import Pacotes from '../app/models/Pacote';
+import Depoimento from '../app/models/Depoimento';
 
 const models = [
   Usuario,
   File,
   Blog,
   Banner,
+  Depoimento,
   Produto,
   Contatoforms,
   Ondeestamos,

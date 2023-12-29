@@ -16,6 +16,7 @@ import ImagenscvController from './app/controllers/ImagenscvController';
 import authMiddleware from './app/middlewares/auth';
 import BannerController from './app/controllers/BannerController';
 import PacoteController from './app/controllers/PacoteController';
+import DepoimentoController from './app/controllers/DepoimentoController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -24,6 +25,8 @@ routes.post('/usuarios', UsuarioController.store);
 routes.post('/sessions', SessionController.store);
 
 routes.get('/banners', BannerController.index);
+
+routes.get('/depoimentos', DepoimentoController.index);
 
 routes.get('/blog', BlogController.index);
 routes.get('/blog/:id', BlogController.detail);
@@ -60,6 +63,9 @@ routes.delete('/usuarios/:id', UsuarioController.delete);
 
 routes.post('/banner', BannerController.store);
 routes.delete('/banner/:id', BannerController.delete);
+
+routes.post('/depoimento', DepoimentoController.store);
+routes.delete('/depoimento/:id', DepoimentoController.delete);
 
 routes.post('/blog', BlogController.store);
 routes.put('/blog/:id', BlogController.update);
