@@ -26,9 +26,10 @@ class ProdutoController {
       valoraprazo,
       parcelas,
       img_id,
+      client
     } = req.body;
 
-    const produtoExiste = await Produto.findOne({ where: { nome, saida, retorno } });
+    const produtoExiste = await Produto.findOne({ where: { nome, saida, retorno, client } });
 
     if (produtoExiste) {
       return res.status(400).json({ erro: 'Produto já existe!' });
@@ -47,6 +48,7 @@ class ProdutoController {
       parcelas,
       usuario_id,
       img_id,
+      client
     });
 
     return res.json(produto);

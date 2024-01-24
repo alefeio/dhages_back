@@ -13,6 +13,7 @@ class Produtos extends Model {
         valoraprazo: Sequelize.INTEGER,
         parcelas: Sequelize.INTEGER,
         ativo: Sequelize.BOOLEAN,
+        client: Sequelize.STRING
       },
       {
         sequelize,
