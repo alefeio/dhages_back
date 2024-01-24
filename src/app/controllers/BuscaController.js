@@ -7,12 +7,14 @@ class BuscaController {
   async index(req, res) {
     const { page = 1, busca } = req.query;
 
+    const hoje = new Date();
+
     const total = await Pacotes.count({
       where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` } },
     });
 
     const produtos = await Pacotes.findAll({
-      where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` } },
+      where: { ativo: true, nome: { [Op.iLike]: `%${busca}%` }, saida: { [Op.gte]: hoje } },
       order: ['saida'],
       limit: 12,
       offset: (page - 1) * 12,
