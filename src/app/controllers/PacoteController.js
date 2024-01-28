@@ -28,9 +28,10 @@ class PacotesController {
       valoraprazo,
       parcelas,
       img_id,
+      client
     } = req.body;
 
-    const pacoteExiste = await Pacotes.findOne({ where: { nome, saida, retorno } });
+    const pacoteExiste = await Pacotes.findOne({ where: { nome, saida, retorno, client } });
 
     if (pacoteExiste) {
       return res.status(400).json({ erro: 'Pacote já existe!' });
@@ -49,6 +50,7 @@ class PacotesController {
       parcelas,
       usuario_id,
       img_id,
+      client
     });
 
     return res.json(pacote);
