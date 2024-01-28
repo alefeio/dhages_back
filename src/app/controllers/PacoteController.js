@@ -57,7 +57,7 @@ class PacotesController {
   }
 
   async index(req, res) {
-    const { page = 1 } = req.query;
+    const { page = 1, client } = req.query;
 
     const hoje = new Date();
 
@@ -66,7 +66,7 @@ class PacotesController {
     });
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true, saida: { [Op.gte]: hoje } },
+      where: { ativo: true, client, saida: { [Op.gte]: hoje } },
       order: ['saida'],
       limit: 12,
       offset: (page - 1) * 12,
