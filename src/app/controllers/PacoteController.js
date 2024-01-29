@@ -83,16 +83,16 @@ class PacotesController {
   }
 
   async todas(req, res) {
-    const { page = 1 } = req.query;
+    const { page = 1, client } = req.query;
 
     const hoje = new Date();
 
     const total = await Pacotes.count({
-      where: { ativo: true },
+      where: { ativo: true, client },
     });
 
     const pacotes = await Pacotes.findAll({
-      where: { ativo: true },
+      where: { ativo: true, client },
       order: ['saida'],
       limit: 50,
       offset: (page - 1) * 50,
