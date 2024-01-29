@@ -25,6 +25,7 @@ class ContatoformsController {
       telefone,
       assunto,
       mensagem,
+      client
     } = await Contatoforms.create(req.body);
 
     // await Queue.add(ContatoMail.key, contato);
@@ -51,6 +52,7 @@ class ContatoformsController {
       telefone,
       assunto,
       mensagem,
+      client
     });
   }
 
@@ -59,8 +61,10 @@ class ContatoformsController {
     //   return res.status(401).json({ erro: 'Operação não autorizada!' });
     // }
 
+    const { client } = req.query;
+
     const contatos = await Contatoforms.findAll({
-      where: { lida: false },
+      where: { client, lida: false },
       order: [['created_at', 'DESC']]
     });
 
@@ -71,9 +75,10 @@ class ContatoformsController {
     // if (!req.isAdmin) {
     //   return res.status(401).json({ erro: 'Operação não autorizada!' });
     // }
+    const { client } = req.query;
 
     const contatos = await Contatoforms.findAll({
-      where: { lida: true },
+      where: { client, lida: true },
       order: [['created_at', 'DESC']]
     });
 
