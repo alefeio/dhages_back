@@ -8,6 +8,7 @@ class Depoimento extends Model {
         texto: Sequelize.STRING,
         tipo: Sequelize.STRING,
         ativo: Sequelize.BOOLEAN,
+        client: Sequelize.STRING
       },
       {
         sequelize,

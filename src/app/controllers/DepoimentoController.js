@@ -12,6 +12,7 @@ class DepoimentoController {
             texto,
             tipo,
             img_id,
+            client
         } = req.body;
 
         const depoimento = await Depoimento.create({
@@ -19,14 +20,17 @@ class DepoimentoController {
             texto,
             tipo,
             img_id,
+            client
         });
 
         return res.json(depoimento);
     }
 
     async index(req, res) {
+        const { client } = req.query;
+        
         const depoimento = await Depoimento.findAll({
-            where: { ativo: true },
+            where: { client, ativo: true },
             attributes: [
                 'id',
                 'nome',
