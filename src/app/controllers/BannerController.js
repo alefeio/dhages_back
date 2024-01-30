@@ -10,19 +10,23 @@ class BannerController {
     const {
       titulo,
       img_id,
+      client
     } = req.body;
 
     const banner = await Banner.create({
       titulo,
       img_id,
+      client
     });
 
     return res.json(banner);
   }
 
   async index(req, res) {
+    const { client } = req.query;
+    
     const banner = await Banner.findAll({
-      where: { ativo: true },
+      where: { client, ativo: true },
       attributes: [
         'id',
         'titulo',
