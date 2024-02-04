@@ -16,6 +16,7 @@ import ImagenscvController from './app/controllers/ImagenscvController';
 import authMiddleware from './app/middlewares/auth';
 import BannerController from './app/controllers/BannerController';
 import PacoteController from './app/controllers/PacoteController';
+import ServicosController from './app/controllers/ServicoController';
 import DepoimentoController from './app/controllers/DepoimentoController';
 
 const routes = new Router();
@@ -36,6 +37,9 @@ routes.get('/produtos/:id', ProdutoController.detail);
 
 routes.get('/pacotes', PacoteController.index);
 routes.get('/pacotes/:nome/:id', PacoteController.detail);
+
+routes.get('/servicos', ServicosController.index);
+routes.get('/servicos/:nome/:id', ServicosController.detail);
 
 routes.get('/compraevenda/', CompraevendaController.index);
 routes.get('/compraevenda/:id', CompraevendaController.detail);
@@ -79,6 +83,10 @@ routes.post('/pacotes', PacoteController.store);
 routes.put('/pacotes/:id', PacoteController.update);
 routes.delete('/pacotes/:id', PacoteController.delete);
 routes.get('/todas', PacoteController.todas);
+
+routes.post('/servicos', ServicosController.store);
+routes.put('/servicos/:id', ServicosController.update);
+routes.delete('/servicos/:id', ServicosController.delete);
 
 routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);

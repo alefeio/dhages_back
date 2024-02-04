@@ -14,6 +14,7 @@ import Imagenscv from '../app/models/Imagenscv';
 import databaseConfig from '../config/database';
 import Pacotes from '../app/models/Pacote';
 import Depoimento from '../app/models/Depoimento';
+import Servicos from '../app/models/Servico';
 
 const models = [
   Usuario,
@@ -27,7 +28,8 @@ const models = [
   Compraevenda,
   Detalhescv,
   Imagenscv,
-  Pacotes
+  Pacotes,
+  Servicos
 ];
 
 class Database {
