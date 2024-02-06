@@ -47,15 +47,13 @@ class ServicosController {
   async index(req, res) {
     const { page = 1, client } = req.query;
 
-    const hoje = new Date();
-
     const total = await Servicos.count({
       where: { ativo: true, client },
     });
 
     const pacotes = await Servicos.findAll({
       where: { ativo: true, client },
-      order: ['saida'],
+      order: ['created_at'],
       limit: 12,
       offset: (page - 1) * 12,
       include: [
