@@ -23,7 +23,7 @@ class Sites extends Model {
         bg_fundo: Sequelize.STRING,
         primary_color: Sequelize.STRING,
         second_color: Sequelize.STRING,
-        textbutton_color: Sequelize.STRING,
+        textbutton_color: Sequelize.STRING
       },
       {
         sequelize,
