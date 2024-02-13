@@ -18,6 +18,7 @@ import BannerController from './app/controllers/BannerController';
 import PacoteController from './app/controllers/PacoteController';
 import ServicosController from './app/controllers/ServicoController';
 import DepoimentoController from './app/controllers/DepoimentoController';
+import SiteController from './app/controllers/SiteController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -40,6 +41,8 @@ routes.get('/pacotes/:nome/:id', PacoteController.detail);
 
 routes.get('/servicos', ServicosController.index);
 routes.get('/servicos/:nome/:id', ServicosController.detail);
+
+routes.get('/site', SiteController.index);
 
 routes.get('/compraevenda/', CompraevendaController.index);
 routes.get('/compraevenda/:id', CompraevendaController.detail);
@@ -87,6 +90,10 @@ routes.get('/todas', PacoteController.todas);
 routes.post('/servicos', ServicosController.store);
 routes.put('/servicos/:id', ServicosController.update);
 routes.delete('/servicos/:id', ServicosController.delete);
+
+routes.post('/site', SiteController.store);
+routes.put('/site/:id', SiteController.update);
+routes.delete('/site/:id', SiteController.delete);
 
 routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);
