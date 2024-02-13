@@ -15,7 +15,7 @@ import databaseConfig from '../config/database';
 import Pacotes from '../app/models/Pacote';
 import Depoimento from '../app/models/Depoimento';
 import Servicos from '../app/models/Servico';
-import Site from '../app/models/Site';
+import Sites from '../app/models/Site';
 
 const models = [
   Usuario,
@@ -31,7 +31,7 @@ const models = [
   Imagenscv,
   Pacotes,
   Servicos,
-  Site
+  Sites
 ];
 
 class Database {
