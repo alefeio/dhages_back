@@ -14,6 +14,7 @@ class Sites extends Model {
         servicos: Sequelize.STRING,
         blog: Sequelize.STRING,
         pacotes: Sequelize.STRING,
+        depoimentos: Sequelize.STRING,
         mapa: Sequelize.STRING,
         rodape_titulo: Sequelize.STRING,
         rodape_texto: Sequelize.STRING,
