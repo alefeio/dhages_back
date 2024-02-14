@@ -36,6 +36,7 @@ class Sites extends Model {
   static associate(models) {
     this.belongsTo(models.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
     this.belongsTo(models.File, { foreignKey: 'img_id', as: 'imagem' });
+    this.belongsTo(models.File, { foreignKey: 'logo_id', as: 'logo' });
   }
 }
 

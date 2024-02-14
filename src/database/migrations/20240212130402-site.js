@@ -68,6 +68,13 @@ module.exports = {
       textbutton_color: {
         type: Sequelize.STRING,
       },
+      logo_id: {
+        type: Sequelize.INTEGER,
+        references: { model: 'files', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        allowNull: true,
+      },
       img_id: {
         type: Sequelize.INTEGER,
         references: { model: 'files', key: 'id' },

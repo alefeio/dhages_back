@@ -22,6 +22,7 @@ class SiteController {
       nome,
       descricao,
       img_id,
+      logo_id,
       client,
       banner,
       banner_h,
@@ -54,6 +55,7 @@ class SiteController {
       descricao,
       usuario_id,
       img_id,
+      logo_id,
       client,
       banner,
       banner_h,
@@ -85,6 +87,11 @@ class SiteController {
         {
           model: File,
           as: 'imagem',
+          attributes: ['id', 'path', 'url'],
+        },
+        {
+          model: File,
+          as: 'logo',
           attributes: ['id', 'path', 'url'],
         },
       ],
