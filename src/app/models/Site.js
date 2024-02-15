@@ -6,6 +6,7 @@ class Sites extends Model {
       {
         nome: Sequelize.STRING,
         descricao: Sequelize.STRING,
+        title: Sequelize.STRING,
         ativo: Sequelize.BOOLEAN,
         client: Sequelize.STRING,
         banner: Sequelize.BOOLEAN,
