@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn('sites', 'title', {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     });
   },
 
