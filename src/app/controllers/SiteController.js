@@ -41,7 +41,11 @@ class SiteController {
       bg_fundo,
       primary_color,
       second_color,
-      textbutton_color
+      textbutton_color,
+      textonobanner,
+      titulobanner,
+      descricaobanner,
+      qtdlinhaservicos
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -76,7 +80,11 @@ class SiteController {
       bg_fundo,
       primary_color,
       second_color,
-      textbutton_color
+      textbutton_color,
+      textonobanner,
+      titulobanner,
+      descricaobanner,
+      qtdlinhaservicos
     });
 
     return res.json(pacote);
