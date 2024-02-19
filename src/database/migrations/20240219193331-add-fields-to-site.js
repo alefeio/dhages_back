@@ -13,12 +13,17 @@ module.exports = {
         type: Sequelize.STRING,
       }),
       queryInterface.addColumn('sites', 'qtdlinhaservicos', {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       }),
     ];
   },
 
   down: (queryInterface) => {
-    return queryInterface.removeColumn('sites', 'title');
+    return [
+      queryInterface.removeColumn('sites', 'textonobanner'),
+      queryInterface.removeColumn('sites', 'titulobanner'),
+      queryInterface.removeColumn('sites', 'descricaobanner'),
+      queryInterface.removeColumn('sites', 'qtdlinhaservicos'),
+    ]
   },
 };
