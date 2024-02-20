@@ -29,7 +29,12 @@ class Sites extends Model {
         textonobanner: Sequelize.BOOLEAN,
         titulobanner: Sequelize.STRING,
         descricaobanner: Sequelize.STRING,
-        qtdlinhaservicos: Sequelize.INTEGER
+        qtdlinhaservicos: Sequelize.INTEGER,
+        qtdlinhablog: Sequelize.INTEGER,
+        qtdlinhapacotes: Sequelize.INTEGER,
+        bgtitulobanner: Sequelize.STRING,
+        alturamenu: Sequelize.INTEGER,
+        bgdescricaobanner: Sequelize.STRING,
       },
       {
         sequelize,

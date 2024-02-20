@@ -45,7 +45,12 @@ class SiteController {
       textonobanner,
       titulobanner,
       descricaobanner,
-      qtdlinhaservicos
+      qtdlinhaservicos,
+      qtdlinhablog,
+      qtdlinhapacotes,
+      bgtitulobanner,
+      alturamenu,
+      bgdescricaobanner
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -84,7 +89,12 @@ class SiteController {
       textonobanner,
       titulobanner,
       descricaobanner,
-      qtdlinhaservicos
+      qtdlinhaservicos,
+      qtdlinhablog,
+      qtdlinhapacotes,
+      bgtitulobanner,
+      alturamenu,
+      bgdescricaobanner
     });
 
     return res.json(pacote);
