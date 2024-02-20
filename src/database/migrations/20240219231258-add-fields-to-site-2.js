@@ -9,13 +9,13 @@ module.exports = {
       type: Sequelize.INTEGER,
     });
     queryInterface.addColumn('sites', 'bgtitulobanner', {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
     });
     queryInterface.addColumn('sites', 'alturamenu', {
       type: Sequelize.INTEGER,
     });
     return queryInterface.addColumn('sites', 'bgdescricaobanner', {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
     });
   },
 
