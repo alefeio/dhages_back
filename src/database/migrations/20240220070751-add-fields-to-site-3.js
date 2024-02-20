@@ -20,6 +20,9 @@ module.exports = {
   },
 
   down: (queryInterface) => {
+    queryInterface.removeColumn('sites', 'qtd_linhablog');
+    queryInterface.removeColumn('sites', 'qtd_linhapacotes');
+    queryInterface.removeColumn('sites', 'altura_menu');
     queryInterface.removeColumn('sites', 'bg_titulobanner');
     return queryInterface.removeColumn('sites', 'bg_descricaobanner');
   },
