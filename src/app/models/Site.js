@@ -35,6 +35,10 @@ class Sites extends Model {
         altura_menu: Sequelize.INTEGER,
         bg_titulobanner: Sequelize.STRING,
         bg_descricaobanner: Sequelize.STRING,
+        cor_titulobanner: Sequelize.STRING,
+        cor_descricaobanner: Sequelize.STRING,
+        cor_titulosite: Sequelize.STRING,
+        cor_textosite: Sequelize.STRING
       },
       {
         sequelize,
