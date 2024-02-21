@@ -13,6 +13,7 @@ class BlogController {
       texto,
       autor,
       img_id,
+      client
     } = req.body;
 
     const blogExiste = await Blog.findOne({ where: { titulo } });
@@ -30,6 +31,7 @@ class BlogController {
       autor,
       usuario_id,
       img_id,
+      client
     });
 
     return res.json(blog);
