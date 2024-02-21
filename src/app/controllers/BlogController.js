@@ -40,7 +40,7 @@ class BlogController {
   async index(req, res) {
     const { page = 1, client } = req.query;
 
-    const total = await Pacotes.count({
+    const total = await Blog.count({
       where: { ativo: true, client },
     });
 
