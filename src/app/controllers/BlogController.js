@@ -38,7 +38,11 @@ class BlogController {
   }
 
   async index(req, res) {
-    const { page = 1 } = req.query;
+    const { page = 1, client } = req.query;
+
+    const total = await Pacotes.count({
+      where: { ativo: true, client },
+    });
 
     const blog = await Blog.findAll({
       where: { ativo: true, client },
@@ -53,7 +57,7 @@ class BlogController {
       ],
     });
 
-    return res.json(blog);
+    return res.json({ blog, total });
   }
 
   async detail(req, res) {
