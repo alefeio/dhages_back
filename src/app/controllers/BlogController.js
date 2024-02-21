@@ -41,16 +41,9 @@ class BlogController {
     const { page = 1 } = req.query;
 
     const blog = await Blog.findAll({
-      where: { ativo: true },
-      attributes: [
-        'id',
-        'titulo',
-        'descricao',
-        'texto',
-        'autor',
-      ],
-      limit: 20,
-      offset: (page - 1) * 20,
+      where: { ativo: true, client },
+      limit: 12,
+      offset: (page - 1) * 12,
       include: [
         {
           model: File,
@@ -67,14 +60,7 @@ class BlogController {
     const busca = req.params.id;
 
     const blog = await Blog.findOne({
-      where: { id: busca, ativo: true },
-      attributes: [
-        'id',
-        'titulo',
-        'descricao',
-        'texto',
-        'autor',
-      ],
+      where: { id: busca, ativo: true, client },
       include: [
         {
           model: File,
