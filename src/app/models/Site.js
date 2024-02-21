@@ -38,7 +38,9 @@ class Sites extends Model {
         cor_titulobanner: Sequelize.STRING,
         cor_descricaobanner: Sequelize.STRING,
         cor_titulosite: Sequelize.STRING,
-        cor_textosite: Sequelize.STRING
+        cor_textosite: Sequelize.STRING,
+        qtdlinhaprodutos: Sequelize.INTEGER,
+        qtdlinhadepoimentos: Sequelize.INTEGER
       },
       {
         sequelize,

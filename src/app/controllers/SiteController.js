@@ -54,7 +54,9 @@ class SiteController {
       cor_titulobanner,
       cor_descricaobanner,
       cor_titulosite,
-      cor_textosite
+      cor_textosite,
+      qtdlinhaprodutos,
+      qtdlinhadepoimentos
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -102,7 +104,9 @@ class SiteController {
       cor_titulobanner,
       cor_descricaobanner,
       cor_titulosite,
-      cor_textosite
+      cor_textosite,
+      qtdlinhaprodutos,
+      qtdlinhadepoimentos
     });
 
     return res.json(pacote);
