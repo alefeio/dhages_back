@@ -19,6 +19,7 @@ import PacoteController from './app/controllers/PacoteController';
 import ServicosController from './app/controllers/ServicoController';
 import DepoimentoController from './app/controllers/DepoimentoController';
 import SiteController from './app/controllers/SiteController';
+import BuscaBlogController from './app/controllers/BuscaBlogController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -50,6 +51,7 @@ routes.get('/detalhescv/:id', CompraevendaController.detalhescv);
 routes.get('/detalhesimagenscv/:id', CompraevendaController.detalhesimagenscv);
 
 routes.get('/busca', BuscaController.index);
+routes.get('/buscablog', BuscaBlogController.index);
 
 routes.get('/ondeestamos', OndeestamosController.index);
 routes.get('/ondeestamos/:id', OndeestamosController.detail);
