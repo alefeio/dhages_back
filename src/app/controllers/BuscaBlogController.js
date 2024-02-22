@@ -8,7 +8,7 @@ class BuscaBlogController {
 
     const blog = await Blog.findAll({
       where: { ativo: true, client, titulo: { [Op.iLike]: `%${busca}%` }, texto: { [Op.iLike]: `%${busca}%` } },
-      order: ['saida'],
+      order: [['id', 'DESC']],
       limit: 12,
       offset: (page - 1) * 12,
       include: [
@@ -22,7 +22,7 @@ class BuscaBlogController {
 
     console.log(blog);
 
-    return res.json({ blog });
+    return res.json(blog);
   }
 }
 
