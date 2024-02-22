@@ -64,7 +64,7 @@ class BlogController {
     const busca = req.params.id;
 
     const blog = await Blog.findOne({
-      where: { id: busca, ativo: true, client },
+      where: { id: busca, ativo: true },
       include: [
         {
           model: File,
