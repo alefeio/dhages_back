@@ -7,7 +7,7 @@ class BuscaBlogController {
     const { page = 1, client, busca } = req.query;
 
     const blog = await Blog.findAll({
-      where: { ativo: true, client, nome: { [Op.iLike]: `%${busca}%` } },
+      where: { ativo: true, client, titulo: { [Op.iLike]: `%${busca}%`, texto: { [Op.iLike]: `%${busca}%` } },
       order: ['saida'],
       limit: 12,
       offset: (page - 1) * 12,
