@@ -40,7 +40,11 @@ class Sites extends Model {
         cor_titulosite: Sequelize.STRING,
         cor_textosite: Sequelize.STRING,
         qtdlinhaprodutos: Sequelize.INTEGER,
-        qtdlinhadepoimentos: Sequelize.INTEGER
+        qtdlinhadepoimentos: Sequelize.INTEGER,
+        font_serifa: Sequelize.BOOLEAN,
+        border_radius: Sequelize.INTEGER,
+        sombra: Sequelize.BOOLEAN,
+        altura_foto: Sequelize.INTEGER
       },
       {
         sequelize,
