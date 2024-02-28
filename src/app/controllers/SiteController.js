@@ -60,7 +60,8 @@ class SiteController {
       font_serifa,
       border_radius,
       sombra,
-      altura_foto
+      altura_foto,
+      favicon
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -114,7 +115,8 @@ class SiteController {
       font_serifa,
       border_radius,
       sombra,
-      altura_foto
+      altura_foto,
+      favicon
     });
 
     return res.json(pacote);

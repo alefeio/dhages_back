@@ -44,7 +44,8 @@ class Sites extends Model {
         font_serifa: Sequelize.BOOLEAN,
         border_radius: Sequelize.INTEGER,
         sombra: Sequelize.BOOLEAN,
-        altura_foto: Sequelize.INTEGER
+        altura_foto: Sequelize.INTEGER,
+        favicon: Sequelize.STRING
       },
       {
         sequelize,
