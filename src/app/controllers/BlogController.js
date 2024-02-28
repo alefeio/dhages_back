@@ -64,10 +64,10 @@ class BlogController {
   }
 
   async detail(req, res) {
-    const busca = req.params.id;
+    const busca = req.params.nome;
 
     const blog = await Blog.findOne({
-      where: { id: busca, ativo: true },
+      where: { url: busca, ativo: true },
       include: [
         {
           model: File,

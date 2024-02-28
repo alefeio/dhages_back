@@ -32,7 +32,7 @@ routes.get('/banners', BannerController.index);
 routes.get('/depoimentos', DepoimentoController.index);
 
 routes.get('/blog', BlogController.index);
-routes.get('/blog/:nome/:id', BlogController.detail);
+routes.get('/blog/:nome', BlogController.detail);
 
 routes.get('/produtos', ProdutoController.index);
 routes.get('/produtos/:id', ProdutoController.detail);
