@@ -41,7 +41,11 @@ class Sites extends Model {
         cor_titulosite: Sequelize.STRING,
         cor_textosite: Sequelize.STRING,
         qtdlinhaprodutos: Sequelize.INTEGER,
-        qtdlinhadepoimentos: Sequelize.INTEGER
+        qtdlinhadepoimentos: Sequelize.INTEGER,
+        font_serifa: Sequelize.BOOLEAN,
+        border_radius: Sequelize.INTEGER,
+        sombra: Sequelize.BOOLEAN,
+        altura_foto: Sequelize.INTEGER
       },
       {
         sequelize,
@@ -55,6 +59,7 @@ class Sites extends Model {
     this.belongsTo(models.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
     this.belongsTo(models.File, { foreignKey: 'img_id', as: 'imagem' });
     this.belongsTo(models.File, { foreignKey: 'logo_id', as: 'logo' });
+    this.belongsTo(models.File, { foreignKey: 'favicon_id', as: 'favicon' });
   }
 }
 
