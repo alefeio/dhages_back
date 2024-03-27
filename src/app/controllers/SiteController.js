@@ -21,7 +21,7 @@ class SiteController {
     const {
       nome,
       descricao,
-      viewDescricao,
+      // viewDescricao,
       title,
       img_id,
       logo_id,
@@ -75,7 +75,7 @@ class SiteController {
     const pacote = await Site.create({
       nome,
       descricao,
-      viewDescricao,
+      // viewDescricao,
       title,
       usuario_id,
       img_id,
