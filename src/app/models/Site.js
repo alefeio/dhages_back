@@ -45,7 +45,7 @@ class Sites extends Model {
         border_radius: Sequelize.INTEGER,
         sombra: Sequelize.BOOLEAN,
         altura_foto: Sequelize.INTEGER,
-        viewDescricao: Sequelize.BOOLEAN
+        viewdescricao: Sequelize.BOOLEAN
       },
       {
         sequelize,

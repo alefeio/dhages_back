@@ -61,7 +61,7 @@ class SiteController {
       border_radius,
       sombra,
       altura_foto,
-      viewDescricao
+      viewdescricao
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -116,7 +116,7 @@ class SiteController {
       border_radius,
       sombra,
       altura_foto,
-      viewDescricao
+      viewdescricao
     });
 
     return res.json(pacote);
