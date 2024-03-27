@@ -6,7 +6,6 @@ class Sites extends Model {
       {
         nome: Sequelize.STRING,
         descricao: Sequelize.STRING,
-        // viewDescricao: Sequelize.BOOLEAN,
         title: Sequelize.STRING,
         ativo: Sequelize.BOOLEAN,
         client: Sequelize.STRING,
@@ -45,7 +44,8 @@ class Sites extends Model {
         font_serifa: Sequelize.BOOLEAN,
         border_radius: Sequelize.INTEGER,
         sombra: Sequelize.BOOLEAN,
-        altura_foto: Sequelize.INTEGER
+        altura_foto: Sequelize.INTEGER,
+        viewDescricao: Sequelize.BOOLEAN
       },
       {
         sequelize,

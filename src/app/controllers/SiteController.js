@@ -21,7 +21,6 @@ class SiteController {
     const {
       nome,
       descricao,
-      // viewDescricao,
       title,
       img_id,
       logo_id,
@@ -61,7 +60,8 @@ class SiteController {
       font_serifa,
       border_radius,
       sombra,
-      altura_foto
+      altura_foto,
+      viewDescricao
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -75,7 +75,6 @@ class SiteController {
     const pacote = await Site.create({
       nome,
       descricao,
-      // viewDescricao,
       title,
       usuario_id,
       img_id,
@@ -116,7 +115,8 @@ class SiteController {
       font_serifa,
       border_radius,
       sombra,
-      altura_foto
+      altura_foto,
+      viewDescricao
     });
 
     return res.json(pacote);
