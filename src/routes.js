@@ -38,7 +38,7 @@ routes.get('/produtos', ProdutoController.index);
 routes.get('/produtos/:id', ProdutoController.detail);
 
 routes.get('/pacotes', PacoteController.index);
-routes.get('/pacotes/:nome/:id', PacoteController.detail);
+routes.get('/pacotes/:id/:nome', PacoteController.detail);
 
 routes.get('/servicos', ServicosController.index);
 routes.get('/servicos/:nome/:id', ServicosController.detail);
