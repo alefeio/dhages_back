@@ -8,7 +8,9 @@ class Banner extends Model {
         ativo: Sequelize.BOOLEAN,
         client: Sequelize.STRING,
         link: Sequelize.BOOLEAN,
-        link_tipo: Sequelize.STRING
+        link_tipo: Sequelize.BOOLEAN,
+        tipo_link: Sequelize.STRING,
+        url: Sequelize.STRING
       },
       {
         sequelize,

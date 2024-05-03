@@ -12,7 +12,9 @@ class BannerController {
       img_id,
       client,
       link,
-      link_tipo
+      link_tipo,
+      tipo_link,
+      url
     } = req.body;
 
     const banner = await Banner.create({
@@ -20,7 +22,9 @@ class BannerController {
       img_id,
       client,
       link,
-      link_tipo
+      link_tipo,
+      tipo_link,
+      url
     });
 
     return res.json(banner);
