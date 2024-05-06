@@ -35,10 +35,6 @@ class BannerController {
 
     const banner = await Banner.findAll({
       where: { client, ativo: true },
-      attributes: [
-        'id',
-        'titulo',
-      ],
       limit: 20,
       order: [['id', 'DESC']],
       include: [
