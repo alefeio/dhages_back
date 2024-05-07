@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import Usuario from '../models/Usuario';
+import { removerEspacosEAcentos } from '../../lib/removerEspacosEAcentos';
 
 class UsuarioController {
   async store(req, res) {
@@ -8,13 +9,16 @@ class UsuarioController {
       email: Yup.string().email().required(),
       password: Yup.string().required(),
       admin: Yup.boolean().required(),
+      codigo_up: Yup.string()
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ erro: 'Falha na validação!' });
     }
 
-    const { nome, email, password, admin } = req.body;
+    const { nome, email, password, admin, codigo_up } = req.body;
+
+    const codigo = email;
 
     const usuarioExiste = await Usuario.findOne({ where: { email } });
 
@@ -27,6 +31,8 @@ class UsuarioController {
       email,
       password,
       admin,
+      codigo,
+      codigo_up
     });
 
     return res.json({
@@ -34,6 +40,8 @@ class UsuarioController {
       nome,
       email,
       admin,
+      codigo,
+      codigo_up
     });
   }
 
