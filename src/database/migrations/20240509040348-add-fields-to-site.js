@@ -14,6 +14,6 @@ module.exports = {
 
   down: (queryInterface) => {
     queryInterface.removeColumn('sites', 'tipo_logo');
-    queryInterface.removeColumn('sites', 'logo_texto');
+    return queryInterface.removeColumn('sites', 'logo_texto');
   },
 };
