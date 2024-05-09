@@ -4,7 +4,8 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     queryInterface.addColumn('sites', 'tipo_logo', {
       type: Sequelize.STRING,
-      default: 'imagem'
+      defaultValue: 'imagem',
+      allowNull: false
     });
     return queryInterface.addColumn('sites', 'logo_texto', {
       type: Sequelize.STRING,
