@@ -47,7 +47,8 @@ class Sites extends Model {
         altura_foto: Sequelize.INTEGER,
         viewdescricao: Sequelize.BOOLEAN,
         tipo_logo: Sequelize.STRING,
-        logo_texto: Sequelize.STRING
+        logo_texto: Sequelize.STRING,
+        cor_link: Sequelize.STRING
       },
       {
         sequelize,
