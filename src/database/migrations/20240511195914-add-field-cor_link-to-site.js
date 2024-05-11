@@ -3,7 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn('sites', 'cor_link', {
-      type: Sequelize.BOOLEAN,
+      type: Sequelize.STRING,
+      defaultValue: '000000',
     });
   },
 
