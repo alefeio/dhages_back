@@ -6,6 +6,10 @@ class BuscaBlogController {
   async index(req, res) {
     const { page = 1, client, busca } = req.query;
 
+    const total = await Blog.count({
+      where: { ativo: true, client, nome: { [Op.iLike]: `%${busca}%` } },
+    });
+
     const blog = await Blog.findAll({
       where: { ativo: true, client, titulo: { [Op.iLike]: `%${busca}%` }, texto: { [Op.iLike]: `%${busca}%` } },
       order: [['id', 'DESC']],
@@ -22,7 +26,7 @@ class BuscaBlogController {
 
     console.log(blog);
 
-    return res.json(blog);
+    return res.json({ blog, total });
   }
 }
 
