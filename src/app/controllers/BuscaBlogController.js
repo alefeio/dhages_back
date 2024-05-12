@@ -7,7 +7,7 @@ class BuscaBlogController {
     const { page = 1, client, busca } = req.query;
 
     const total = await Blog.count({
-      where: { ativo: true, client, nome: { [Op.iLike]: `%${busca}%` } },
+      where: { ativo: true, client, titulo: { [Op.iLike]: `%${busca}%` }, texto: { [Op.iLike]: `%${busca}%` } },
     });
 
     const blog = await Blog.findAll({
