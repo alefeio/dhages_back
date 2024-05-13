@@ -14,7 +14,9 @@ class BlogController {
       autor,
       img_id,
       client,
-      url
+      url,
+      view_login,
+      view_cadastro
     } = req.body;
 
     const blogExiste = await Blog.findOne({ where: { titulo } });
@@ -33,14 +35,16 @@ class BlogController {
       usuario_id,
       img_id,
       client,
-      url
+      url,
+      view_login,
+      view_cadastro
     });
 
     return res.json(blog);
   }
 
   async index(req, res) {
-    const { page = 1, client } = req.query;
+    const { page = 1, client, pageSize } = req.query;
 
     const total = await Blog.count({
       where: { ativo: true, client },
@@ -49,8 +53,8 @@ class BlogController {
     const blog = await Blog.findAll({
       where: { ativo: true, client },
       order: [['id', 'DESC']],
-      limit: 12,
-      offset: (page - 1) * 12,
+      limit: pageSize,
+      offset: (page - 1) * pageSize,
       include: [
         {
           model: File,
