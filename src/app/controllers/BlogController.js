@@ -53,8 +53,8 @@ class BlogController {
     const blog = await Blog.findAll({
       where: { ativo: true, client },
       order: [['id', 'DESC']],
-      limit: pageSize,
-      offset: (page - 1) * pageSize,
+      limit: 2,
+      offset: (page - 1) * 2,
       include: [
         {
           model: File,
