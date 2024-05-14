@@ -64,7 +64,9 @@ class SiteController {
       viewdescricao,
       tipo_logo,
       logo_texto,
-      cor_link
+      cor_link,
+      view_login,
+      view_cadastro
     } = req.body;
 
     const pacoteExiste = await Site.findOne({ where: { nome, client } });
@@ -122,7 +124,9 @@ class SiteController {
       viewdescricao,
       tipo_logo,
       logo_texto,
-      cor_link
+      cor_link,
+      view_login,
+      view_cadastro
     });
 
     return res.json(pacote);

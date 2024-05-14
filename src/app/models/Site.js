@@ -48,7 +48,9 @@ class Sites extends Model {
         viewdescricao: Sequelize.BOOLEAN,
         tipo_logo: Sequelize.STRING,
         logo_texto: Sequelize.STRING,
-        cor_link: Sequelize.STRING
+        cor_link: Sequelize.STRING,
+        view_login: Sequelize.BOOLEAN,
+        view_cadastro: Sequelize.BOOLEAN
       },
       {
         sequelize,

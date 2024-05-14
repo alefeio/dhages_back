@@ -13,8 +13,8 @@ class BuscaBlogController {
     const blog = await Blog.findAll({
       where: { ativo: true, client, titulo: { [Op.iLike]: `%${busca}%` }, texto: { [Op.iLike]: `%${busca}%` } },
       order: [['id', 'DESC']],
-      limit: 2,
-      offset: (page - 1) * 2,
+      limit: pageSize,
+      offset: (page - 1) * pageSize,
       include: [
         {
           model: File,

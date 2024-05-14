@@ -14,9 +14,7 @@ class BlogController {
       autor,
       img_id,
       client,
-      url,
-      view_login,
-      view_cadastro
+      url
     } = req.body;
 
     const blogExiste = await Blog.findOne({ where: { titulo } });
@@ -53,8 +51,8 @@ class BlogController {
     const blog = await Blog.findAll({
       where: { ativo: true, client },
       order: [['id', 'DESC']],
-      limit: 2,
-      offset: (page - 1) * 2,
+      limit: pageSize,
+      offset: (page - 1) * pageSize,
       include: [
         {
           model: File,

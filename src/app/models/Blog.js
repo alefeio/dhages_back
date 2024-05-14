@@ -10,9 +10,7 @@ class Blog extends Model {
         autor: Sequelize.STRING,
         ativo: Sequelize.BOOLEAN,
         client: Sequelize.STRING,
-        url: Sequelize.STRING,
-        view_login: Sequelize.BOOLEAN,
-        view_cadastro: Sequelize.BOOLEAN
+        url: Sequelize.STRING
       },
       {
         sequelize,
