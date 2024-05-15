@@ -14,7 +14,9 @@ class BlogController {
       autor,
       img_id,
       client,
-      url
+      url,
+      view_login,
+      view_cadastro
     } = req.body;
 
     const blogExiste = await Blog.findOne({ where: { titulo } });
