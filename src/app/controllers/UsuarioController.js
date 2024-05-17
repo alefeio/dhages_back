@@ -9,18 +9,19 @@ class UsuarioController {
       email: Yup.string().email().required(),
       password: Yup.string().required(),
       admin: Yup.boolean().required(),
-      codigo_up: Yup.string()
+      codigo_up: Yup.string(),
+      client: Yup.string()
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ erro: 'Falha na validação!' });
     }
 
-    const { nome, email, password, admin, codigo_up } = req.body;
+    const { nome, email, password, admin, codigo_up, client } = req.body;
 
     const codigo = email;
 
-    const usuarioExiste = await Usuario.findOne({ where: { email } });
+    const usuarioExiste = await Usuario.findOne({ where: { email, client } });
 
     if (usuarioExiste) {
       return res.status(400).json({ erro: 'Usuário já existe!' });
@@ -32,7 +33,8 @@ class UsuarioController {
       password,
       admin,
       codigo,
-      codigo_up
+      codigo_up,
+      client
     });
 
     return res.json({
@@ -41,7 +43,8 @@ class UsuarioController {
       email,
       admin,
       codigo,
-      codigo_up
+      codigo_up,
+      client
     });
   }
 

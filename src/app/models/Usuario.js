@@ -11,7 +11,8 @@ class Usuario extends Model {
         password_hash: Sequelize.STRING,
         admin: Sequelize.BOOLEAN,
         codigo: Sequelize.STRING,
-        codigo_up: Sequelize.STRING
+        codigo_up: Sequelize.STRING,
+        client: Sequelize.STRING
       },
       {
         sequelize,
