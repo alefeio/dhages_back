@@ -10,16 +10,17 @@ class SessionController {
     const schema = Yup.object().shape({
       email: Yup.string().email().required(),
       password: Yup.string().required(),
+      client: Yup.string().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ erro: 'Falha na validação!' });
     }
 
-    const { email, password } = req.body;
+    const { email, password, client } = req.body;
 
     const usuario = await Usuario.findOne({
-      where: { email },
+      where: { email, client },
       include: [
         {
           model: File,
@@ -37,7 +38,7 @@ class SessionController {
       return res.status(401).json({ erro: 'Senha não confere!' });
     }
 
-    const { id, nome, admin, imagem } = usuario;
+    const { id, nome, admin, imagem, codigo, codigo_up } = usuario;
 
     return res.json({
       usuario: {
@@ -46,6 +47,8 @@ class SessionController {
         email,
         admin,
         imagem,
+        codigo, 
+        codigo_up
       },
       token: jwt.sign({ id, admin }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
