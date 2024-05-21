@@ -19,8 +19,10 @@ class SessionController {
 
     const { email, password, client } = req.body;
 
+    const usuarioClient = await Usuario.findOne({ where: { email } });
+
     const usuario = await Usuario.findOne({
-      where: { email, client },
+      where: usuarioClient.client ? { email, client } : { email },
       include: [
         {
           model: File,
@@ -47,7 +49,7 @@ class SessionController {
         email,
         admin,
         imagem,
-        codigo, 
+        codigo,
         codigo_up
       },
       token: jwt.sign({ id, admin }, authConfig.secret, {
