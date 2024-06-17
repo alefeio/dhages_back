@@ -125,17 +125,17 @@ class EleitorController {
             include: [
                 {
                     model: File,
-                    as: 'imagem',
+                    as: 'titulo',
                     attributes: ['id', 'path', 'url'],
                 },
                 {
                     model: File,
-                    as: 'logo',
+                    as: 'cnh',
                     attributes: ['id', 'path', 'url'],
                 },
                 {
                     model: File,
-                    as: 'favicon',
+                    as: 'renavam',
                     attributes: ['id', 'path', 'url'],
                 },
             ],
