@@ -62,7 +62,7 @@ class EleitorController {
             client
         } = req.body;
 
-        const pacoteExiste = await Site.findOne({ where: { cpf, client } });
+        const pacoteExiste = await Eleitores.findOne({ where: { cpf, client } });
 
         if (pacoteExiste) {
             return res.status(400).json({ erro: 'O registro já existe!' });
