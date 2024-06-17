@@ -10,6 +10,7 @@ class Eleitores extends Model {
         nascimento: Sequelize.DATE,
         titulo: Sequelize.STRING,
         zona: Sequelize.STRING,
+        secao: Sequelize.STRING,
         local_votacao: Sequelize.STRING,
         municipio_votacao: Sequelize.STRING,
         uf_votacao: Sequelize.STRING,

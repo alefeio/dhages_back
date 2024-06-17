@@ -33,6 +33,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
+      secao: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       local_votacao: {
         type: Sequelize.STRING,
         allowNull: true,
