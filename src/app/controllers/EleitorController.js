@@ -117,66 +117,66 @@ class EleitorController {
         return res.json(pacote);
     }
 
-    async index(req, res) {
-        const { client } = req.query;
+    // async index(req, res) {
+    //     const { client } = req.query;
 
-        const record = await Eleitores.findOne({
-            where: { ativo: true, client },
-            include: [
-                {
-                    model: File,
-                    as: 'titulo',
-                    attributes: ['id', 'path', 'url'],
-                },
-                {
-                    model: File,
-                    as: 'cnh',
-                    attributes: ['id', 'path', 'url'],
-                },
-                {
-                    model: File,
-                    as: 'renavam',
-                    attributes: ['id', 'path', 'url'],
-                },
-            ],
-        });
+    //     const record = await Eleitores.findOne({
+    //         where: { ativo: true, client },
+    //         include: [
+    //             {
+    //                 model: File,
+    //                 as: 'titulo',
+    //                 attributes: ['id', 'path', 'url'],
+    //             },
+    //             {
+    //                 model: File,
+    //                 as: 'cnh',
+    //                 attributes: ['id', 'path', 'url'],
+    //             },
+    //             {
+    //                 model: File,
+    //                 as: 'renavam',
+    //                 attributes: ['id', 'path', 'url'],
+    //             },
+    //         ],
+    //     });
 
-        return res.json(record);
-    }
+    //     return res.json(record);
+    // }
 
-    async update(req, res) {
-        if (!req.usuarioAdmin) {
-            return res.status(401).json({ erro: 'Operação não autorizada!' });
-        }
+    // async update(req, res) {
+    //     if (!req.usuarioAdmin) {
+    //         return res.status(401).json({ erro: 'Operação não autorizada!' });
+    //     }
 
-        const pacote = await Eleitores.findByPk(req.params.id);
+    //     const pacote = await Eleitores.findByPk(req.params.id);
 
-        if (!pacote) {
-            return res.status(400).json({ erro: 'Não encontrado!' });
-        }
+    //     if (!pacote) {
+    //         return res.status(400).json({ erro: 'Não encontrado!' });
+    //     }
 
-        await pacote.update(req.body);
+    //     await pacote.update(req.body);
 
-        return res.json(pacote);
-    }
+    //     return res.json(pacote);
+    // }
 
-    async delete(req, res) {
-        if (!req.usuarioAdmin) {
-            return res.status(401).json({ erro: 'Operação não autorizada!' });
-        }
+    // async delete(req, res) {
+    //     if (!req.usuarioAdmin) {
+    //         return res.status(401).json({ erro: 'Operação não autorizada!' });
+    //     }
 
-        const pacote = await Eleitores.findByPk(req.params.id);
+    //     const pacote = await Eleitores.findByPk(req.params.id);
 
-        if (!pacote) {
-            return res.status(400).json({ erro: 'Não encontrado!' });
-        }
+    //     if (!pacote) {
+    //         return res.status(400).json({ erro: 'Não encontrado!' });
+    //     }
 
-        pacote.ativo = false;
+    //     pacote.ativo = false;
 
-        pacote.save();
+    //     pacote.save();
 
-        return res.json(pacote);
-    }
+    //     return res.json(pacote);
+    // }
 }
 
 export default new EleitorController();
