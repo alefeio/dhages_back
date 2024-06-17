@@ -100,6 +100,7 @@ routes.delete('/site/:id', SiteController.delete);
 
 routes.post('/eleitores', EleitorController.store);
 routes.post('/eleitores/:id', EleitorController.update);
+routes.get('/eleitor', EleitorController.index);
 
 routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);
