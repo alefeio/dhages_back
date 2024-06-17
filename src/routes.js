@@ -20,6 +20,7 @@ import ServicosController from './app/controllers/ServicoController';
 import DepoimentoController from './app/controllers/DepoimentoController';
 import SiteController from './app/controllers/SiteController';
 import BuscaBlogController from './app/controllers/BuscaBlogController';
+import EleitorController from './app/controllers/EleitorController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -96,6 +97,9 @@ routes.delete('/servicos/:id', ServicosController.delete);
 routes.post('/site', SiteController.store);
 routes.put('/site/:id', SiteController.update);
 routes.delete('/site/:id', SiteController.delete);
+
+routes.post('/eleitores', EleitorController.store);
+routes.post('/eleitores/:id', EleitorController.update);
 
 routes.post('/compraevenda', CompraevendaController.store);
 routes.put('/compraevenda/:id', CompraevendaController.update);
