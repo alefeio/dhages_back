@@ -153,6 +153,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
+      client: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       titulo_id: {
         type: Sequelize.INTEGER,
         references: { model: 'files', key: 'id' },
