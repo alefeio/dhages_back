@@ -115,8 +115,6 @@ class EleitorController {
     }
 
     async index(req, res) {
-        const { client } = req.query;
-
         const usuario_id = req.usuarioId;
 
         const record = await Eleitores.findOne({
