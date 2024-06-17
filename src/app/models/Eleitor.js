@@ -54,9 +54,9 @@ class Eleitores extends Model {
 
   static associate(models) {
     this.belongsTo(models.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
-    this.belongsTo(models.File, { foreignKey: 'titulo_id', as: 'titulo' });
-    this.belongsTo(models.File, { foreignKey: 'cnh_id', as: 'cnh' });
-    this.belongsTo(models.File, { foreignKey: 'renavam_id', as: 'renavam' });
+    this.belongsTo(models.File, { foreignKey: 'titulo_id', as: 'titulo_doc' });
+    this.belongsTo(models.File, { foreignKey: 'cnh_id', as: 'cnh_doc' });
+    this.belongsTo(models.File, { foreignKey: 'renavam_id', as: 'renavam_doc' });
   }
 }
 
