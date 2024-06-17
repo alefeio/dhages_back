@@ -41,7 +41,8 @@ class Eleitores extends Model {
         whatsapp: Sequelize.STRING,
         numero_ligacao: Sequelize.STRING,
         numero_parente: Sequelize.STRING,
-        client: Sequelize.STRING
+        client: Sequelize.STRING,
+        ativo: Sequelize.BOOLEAN
       },
       {
         sequelize,
