@@ -14,10 +14,6 @@ class EleitorController {
             return res.status(400).json({ erro: 'Falha na validação!' });
         }
 
-        if (!req.usuarioAdmin) {
-            return res.status(401).json({ erro: 'Operação não autorizada!' });
-        }
-
         const {
             nome,
             municipio,
@@ -111,7 +107,8 @@ class EleitorController {
             titulo_id,
             cnh_id,
             renavam_id,
-            client
+            client,
+            usuario_id
         });
 
         return res.json(pacote);
@@ -120,8 +117,10 @@ class EleitorController {
     async index(req, res) {
         const { client } = req.query;
 
+        const usuario_id = req.usuarioId;
+
         const record = await Eleitores.findOne({
-            where: { ativo: true, client },
+            where: { ativo: true, usuario_id },
             include: [
                 {
                     model: File,
