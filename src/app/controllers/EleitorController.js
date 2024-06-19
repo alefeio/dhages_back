@@ -118,7 +118,34 @@ class EleitorController {
         const usuario_id = req.usuarioId;
 
         const record = await Eleitores.findOne({
-            where: { ativo: true, usuario_id },
+            where: { usuario_id },
+            include: [
+                {
+                    model: File,
+                    as: 'titulo_doc',
+                    attributes: ['id', 'path', 'url'],
+                },
+                {
+                    model: File,
+                    as: 'cnh_doc',
+                    attributes: ['id', 'path', 'url'],
+                },
+                {
+                    model: File,
+                    as: 'renavam_doc',
+                    attributes: ['id', 'path', 'url'],
+                },
+            ],
+        });
+
+        return res.json(record);
+    }
+
+    async indexs(req, res) {
+        const usuario_id = req.usuarioId;
+
+        const record = await Eleitores.findOne({
+            where: { usuario_id },
             include: [
                 {
                     model: File,
