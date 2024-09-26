@@ -94,8 +94,6 @@ class PacotesController {
     const pacotes = await Pacotes.findAll({
       where: { ativo: true, client },
       order: [['saida', 'DESC']],
-      limit: 50,
-      offset: (page - 1) * 50,
       include: [
         {
           model: File,
